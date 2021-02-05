@@ -25,7 +25,7 @@ function setup() {
   monkey = createSprite(50,140,20,20);
   monkey.addAnimation("running",monkey_running);
   monkey.scale = 0.1;
-  ground = createSprite(0,windowheight/5*4,windowWidth,10);
+  ground = createSprite(0,windowHeight/5*4,windowWidth,10);
   //monkey.setCollider("rectangle",0,0,monkey.width,monkey.height);
   foodGroup = createGroup();
   obstacleGroup = createGroup();  
