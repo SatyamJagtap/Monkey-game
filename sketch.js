@@ -19,13 +19,13 @@ function preload(){
 
 
 function setup() {
-  createCanvas(600,200);
+  createCanvas(windowWidth,windowHeight);
   gamestate = "play";
   score = 0;
   monkey = createSprite(50,140,20,20);
   monkey.addAnimation("running",monkey_running);
   monkey.scale = 0.1;
-  ground = createSprite(300,190,600,10);
+  ground = createSprite(0,windowheight/5*4,windowWidth,10);
   //monkey.setCollider("rectangle",0,0,monkey.width,monkey.height);
   foodGroup = createGroup();
   obstacleGroup = createGroup();  
@@ -41,7 +41,7 @@ function draw() {
     
   monkey.velocityY = 3;
   monkey.collide(ground);
-   if(keyDown("space")){
+   if(touches.length>1 || keyDown("space")){
         monkey.velocityY = -12;
         
     }
@@ -76,7 +76,7 @@ function draw() {
 }
 
 function obstacleFunc(){
-  obstacle = createSprite(600,170,20,20);
+  obstacle = createSprite(windowWidth,170,20,20);
   obstacle.addImage(obstacleImage);
   obstacle.velocityX =  -(6 + score/5);
   obstacle.lifetime = 200;
@@ -84,7 +84,7 @@ function obstacleFunc(){
   obstacleGroup.add(obstacle);
 }
 function fruit(){
-  banana = createSprite(600,85,20,20);
+  banana = createSprite(windowWidth,85,20,20);
   banana.addImage(bananaImage);
   banana.velocityX = -(6 + score/5);
   banana.lifetime = 200;
