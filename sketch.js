@@ -41,7 +41,7 @@ function draw() {
     
   monkey.velocityY = 3;
   monkey.collide(ground);
-   if(touches.length>1 || keyDown("space")){
+   if(World.mousePressedOver || keyDown("space")){
         monkey.velocityY = -12;
         
     }
